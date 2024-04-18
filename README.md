@@ -39,5 +39,5 @@ Git
 <p><a href="https://github.com/KGGeorgiev21">Kaloyan Georgiev</a> - Back-end Developer</p>
 <p><a href="https://github.com/ADAtanasov21">Atanas Atanasov</a> - Back-end Developer</p>
 <p><a href="https://github.com/RVParvanov22">Rumen Parvanov</a> - Back-end Developer</p>
-<p><a href="https://github.com/AVStanev22">Aleksandur Stanev</a> - Back-end Developer</p>
+<p><a href="https://github.com/AVStanev222">Aleksandur Stanev</a> - Back-end Developer</p>
 <p><a href="https://github.com/VBTodorov22">Veselin Todorov</a> - QA Engineer</p>
