@@ -29,7 +29,7 @@ void subjects()
     cin >> choice;
 
     if (choice == '1')
-        chemistry();
+        chemistryTest();
     else if (choice == '2')
         geographyTest();
     else if (choice == '3')
