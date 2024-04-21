@@ -1,13 +1,23 @@
-﻿#include "tests.h"
+﻿// Including necessary header files
+#include "tests.h"
 #include "subjects.h"
 
+// Function definition for biology test
 void biologyTest()
 {
+    // Clearing the console screen
     system("cls");
-    cout << "This is the biology test" << endl; 
+
+    // Displaying test title
+    cout << "This is the biology test" << endl;
+
+    // Creating a QuestionBank object for biology questions
     QuestionBank biologyBank;
+
+    // Initializing score variable
     unsigned short int biologyScore = 0;
 
+    // Adding biology questions to the question bank
     biologyBank.addQuestion("What is the function of the nucleus in the cell?", "Genetic");
     biologyBank.addQuestion("What process the replication is?", "Anabolic");
     biologyBank.addQuestion("What do we obtain in meiosis but not in mitosis?", "4 haploid cells");
@@ -29,17 +39,22 @@ void biologyTest()
     biologyBank.addQuestion("What is the term for the genetic makeup of an organism?", "Genotype");
     biologyBank.addQuestion("What is the name of the outermost layer of skin cells?", "Epidermis");
 
+    // Loop for asking questions
     for (int i = 0; i < 10; i++)
     {
+        // Asking the first question without clearing the screen
         if (i == 0)
         {
+            // Getting a random question from the question bank
             Question q = biologyBank.getRandomQuestion();
             cout << "Question " << i + 1 << ": " << q.getQuestion() << endl;
 
+            // Getting user's answer
             string answer;
             cout << "Enter your answer: ";
             getline(cin, answer);
 
+            // Checking if the answer is correct
             if (answer == q.getAnswer()) {
                 cout << "Correct!" << endl;
                 biologyScore++;
@@ -48,15 +63,21 @@ void biologyTest()
                 cout << "Incorrect. The correct answer is: " << q.getAnswer() << endl;
             }
             cout << endl;
+
+            // Clearing the screen
             system("cls");
         }
+
+        // Asking subsequent questions
         Question q = biologyBank.getRandomQuestion();
         cout << "Question " << i + 1 << ": " << q.getQuestion() << endl;
 
+        // Getting user's answer
         string answer;
         cout << "Enter your answer: ";
         getline(cin, answer);
 
+        // Checking if the answer is correct
         if (answer == q.getAnswer()) {
             cout << "Correct!" << endl;
             biologyScore++;
@@ -67,7 +88,8 @@ void biologyTest()
         cout << endl;
     }
 
-    string grades[5] = {"poor", "average", "good", "very good", "exellent"};
+    // Assigning grade based on the score
+    string grades[5] = { "poor", "average", "good", "very good", "excellent" };
     string grade;
     if (biologyScore < 6)
         grade = grades[0];
@@ -80,8 +102,10 @@ void biologyTest()
     else if (biologyScore > 8)
         grade = grades[4];
 
-
+    // Displaying the score and grade
     cout << "Your score is: " << biologyScore << " which is " << grade << " grade" << endl << endl;
+
+    // Asking if the user wants to do another test
     cout << "Would you like to do another test?" << endl;
     cout << "If yes, then press 'y' or 'Y'. If not, then press 'n' or 'N'." << endl;
     cout << "Enter your answer: ";
@@ -89,9 +113,11 @@ void biologyTest()
     cin >> answer;
     if (answer == 'y' || answer == 'Y')
     {
+        // Clearing the screen and going back to the subject selection menu
         system("cls");
         subjects();
     }
     else
+        // Exiting the program if the user does not want to do another test
         exit(0);
 }
