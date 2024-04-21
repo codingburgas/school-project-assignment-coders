@@ -102,6 +102,13 @@ void biologyTest()
     else if (biologyScore > 8)
         grade = grades[4];
 
+    ofstream out("biologyResults.txt", ios_base::app);
+    if (out.is_open())
+    {
+        out << biologyScore << endl;
+        out.close();
+    }
+
     // Displaying the score and grade
     cout << "Your score is: " << biologyScore << " which is " << grade << " grade" << endl << endl;
 
