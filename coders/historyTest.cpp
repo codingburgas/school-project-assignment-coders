@@ -67,7 +67,7 @@ void historyTest()
         cout << endl;
     }
 
-    /*string grades[5] = { "poor", "average", "good", "very good", "exellent" };
+    string grades[5] = { "poor", "average", "good", "very good", "exellent" };
     string grade;
     if (historyScore < 6)
         grade = grades[0];
@@ -93,5 +93,5 @@ void historyTest()
         subjects();
     }
     else
-        exit(0);*/
+        exit(0);
 }
