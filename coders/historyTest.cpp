@@ -101,6 +101,13 @@ void historyTest()
     else if (historyScore > 8)
         grade = grades[4];
 
+    ofstream out("historyResults.txt", ios_base::app);
+    if (out.is_open())
+    {
+        out << historyScore << endl;
+        out.close();
+    }
+
     // Displaying the score and grade
     cout << "Your score is: " << historyScore << " which is " << grade << " grade" << endl << endl;
 
