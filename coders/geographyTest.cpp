@@ -1,13 +1,22 @@
-#include "tests.h"
+#include "tests.h" // Including necessary header files
 #include "subjects.h"
 
+// Function definition for geography test
 void geographyTest()
 {
+    // Clearing the console screen
     system("cls");
+
+    // Displaying test title
     cout << "This is the geography test" << endl;
+
+    // Creating a QuestionBank object for geography questions
     QuestionBank geographyBank;
+
+    // Initializing score variable
     unsigned short int geographyScore = 0;
 
+    // Adding geography questions to the question bank
     geographyBank.addQuestion("What is the capital city of Australia?", "Canberra");
     geographyBank.addQuestion("Which river is the longest in the world?", "The Nile River");
     geographyBank.addQuestion("What is the largest desert in the world?", " The Sahara Desert");
@@ -29,17 +38,22 @@ void geographyTest()
     geographyBank.addQuestion("What is the name of the largest river in South America?", "The Amazon River");
     geographyBank.addQuestion("Which European country is known as the 'Land of a Thousand Lakes' ?", "Finland");
 
+    // Loop for asking questions
     for (int i = 0; i < 10; i++)
     {
+        // Asking the first question without clearing the screen
         if (i == 0)
         {
+            // Getting a random question from the question bank
             Question q = geographyBank.getRandomQuestion();
             cout << "Question " << i + 1 << ": " << q.getQuestion() << endl;
 
+            // Getting user's answer
             string answer;
             cout << "Enter your answer: ";
             getline(cin, answer);
 
+            // Checking if the answer is correct
             if (answer == q.getAnswer()) {
                 cout << "Correct!" << endl;
                 geographyScore++;
@@ -48,15 +62,21 @@ void geographyTest()
                 cout << "Incorrect. The correct answer is: " << q.getAnswer() << endl;
             }
             cout << endl;
+
+            // Clearing the screen
             system("cls");
         }
+
+        // Asking subsequent questions
         Question q = geographyBank.getRandomQuestion();
         cout << "Question " << i + 1 << ": " << q.getQuestion() << endl;
 
+        // Getting user's answer
         string answer;
         cout << "Enter your answer: ";
         getline(cin, answer);
 
+        // Checking if the answer is correct
         if (answer == q.getAnswer()) {
             cout << "Correct!" << endl;
             geographyScore++;
@@ -67,7 +87,8 @@ void geographyTest()
         cout << endl;
     }
 
-    string grades[5] = { "poor", "average", "good", "very good", "exellent" };
+    // Assigning grade based on the score
+    string grades[5] = { "poor", "average", "good", "very good", "excellent" };
     string grade;
     if (geographyScore < 6)
         grade = grades[0];
@@ -80,8 +101,10 @@ void geographyTest()
     else if (geographyScore > 8)
         grade = grades[4];
 
-
+    // Displaying the score and grade
     cout << "Your score is: " << geographyScore << " which is " << grade << " grade" << endl << endl;
+
+    // Asking if the user wants to do another test
     cout << "Would you like to do another test?" << endl;
     cout << "If yes, then press 'y' or 'Y'. If not, then press 'n' or 'N'." << endl;
     cout << "Enter your answer: ";
@@ -89,12 +112,11 @@ void geographyTest()
     cin >> answer;
     if (answer == 'y' || answer == 'Y')
     {
+        // Clearing the screen and going back to the subject selection menu
         system("cls");
         subjects();
     }
     else
+        // Exiting the program if the user does not want to do another test
         exit(0);
-
-
-
 }
