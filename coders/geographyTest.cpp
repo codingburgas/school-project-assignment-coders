@@ -67,7 +67,7 @@ void geographyTest()
         cout << endl;
     }
 
-    /*string grades[5] = { "poor", "average", "good", "very good", "exellent" };
+    string grades[5] = { "poor", "average", "good", "very good", "exellent" };
     string grade;
     if (geographyScore < 6)
         grade = grades[0];
@@ -93,7 +93,7 @@ void geographyTest()
         subjects();
     }
     else
-        exit(0);*/
+        exit(0);
 
 
 
