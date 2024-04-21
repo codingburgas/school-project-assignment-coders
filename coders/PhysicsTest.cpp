@@ -1,6 +1,7 @@
 ﻿#include "PhysicsTest.h"
 
 void startPhysicsTest() {
+    std::cout << "Physics Test Starting..." << std::endl;
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
     std::cout << std::endl;
@@ -12,7 +13,7 @@ void startPhysicsTest() {
     std::string questions[NUM_QUESTIONS];
     std::string answers[NUM_QUESTIONS];
 
-    questions[0] = "What is the SI unit of force?";
+    questions[0] = "What is the SI unit of force";
     answers[0] = "Newton";
 
     questions[1] = "What is the formula for Newton's second law of motion?";
@@ -174,6 +175,6 @@ void startPhysicsTest() {
             userScore++;
         }
     }
-
+    system("cls");
     std::cout << "Test complete. You scored " << userScore << " out of " << NUM_QUESTIONS << "." << std::endl;
 }

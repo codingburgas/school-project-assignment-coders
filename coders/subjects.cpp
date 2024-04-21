@@ -1,5 +1,6 @@
 #include "subjects.h"
 #include "PhysicsTest.h"
+#include "biologyTest.h"
 
 void mathematics()
 {
@@ -16,10 +17,10 @@ void geography()
     std::cout << "Geography";
 }
 
-void biology()
-{
-    std::cout << "Biology";
-}
+//void biology()
+//{
+//    biologyTest();
+//}
 
 void history()
 {
@@ -46,22 +47,23 @@ void subjects()
     std::cout << "0. Exit" << std::endl;
 
     char choice;
-    std::cin >> choice;
+    cin >> choice;
 
-    switch (choice)
-    {
-    case '1': mathematics(); break;
-    case '2': english(); break;
-    case '3': geography(); break;
-    case '4': biology(); break;
-    case '5': history(); break;
-    case '6': physics(); break;
-    case '0': exit(0);
-    default:
-        std::cout << std::endl << std::endl;
-        std::cout << "You must choose a number between 1, 2, 3, 4, 5, 6, and 0 for the corresponding function!" << std::endl;
-        std::cout << std::endl << std::endl;
-        subjects();
-    }
+    if (choice == '1')
+        mathematics();
+    else if (choice == '2')
+        english();
+    else if (choice == '3')
+        geography();
+    else if (choice == '4')
+        biologyTest();
+    else if (choice == '5')
+        history();
+    else if (choice == '6')
+        physics();
+    else if (choice == '0')
+        exit(0);
+    else subjects();
+
  
 }

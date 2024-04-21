@@ -1,4 +1,5 @@
 #include "menu.h"
+#include "subjects.h"
 
 bool check(string username, string password, string userFile, string passFile)
 {
@@ -47,7 +48,8 @@ void login()
 
         path = "acc.txt";
 
-        cout << "Welcome";
+        cout << "Welcome" << endl;
+        subjects();
     }
     else
     {
