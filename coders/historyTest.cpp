@@ -1,4 +1,5 @@
 #include "tests.h"
+#include "subjects.h"
 
 void historyTest()
 {
@@ -65,5 +66,32 @@ void historyTest()
         }
         cout << endl;
     }
-    cout << "Your final score is: " << historyScore << endl;
+
+    /*string grades[5] = { "poor", "average", "good", "very good", "exellent" };
+    string grade;
+    if (historyScore < 6)
+        grade = grades[0];
+    else if (historyScore == 6)
+        grade = grades[1];
+    else if (historyScore == 7)
+        grade = grades[2];
+    else if (historyScore == 8)
+        grade = grades[3];
+    else if (historyScore > 8)
+        grade = grades[4];
+
+
+    cout << "Your score is: " << historyScore << " which is " << grade << " grade" << endl << endl;
+    cout << "Would you like to do another test?" << endl;
+    cout << "If yes, then press 'y' or 'Y'. If not, then press 'n' or 'N'." << endl;
+    cout << "Enter your answer: ";
+    char answer;
+    cin >> answer;
+    if (answer == 'y' || answer == 'Y')
+    {
+        system("cls");
+        subjects();
+    }
+    else
+        exit(0);*/
 }
