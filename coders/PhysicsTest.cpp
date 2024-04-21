@@ -69,7 +69,7 @@ void physicsTest()
         cout << endl;
     }
 
-    /*string grades[5] = { "poor", "average", "good", "very good", "exellent" };
+    string grades[5] = { "poor", "average", "good", "very good", "exellent" };
     string grade;
     if (physicsScore < 6)
         grade = grades[0];
@@ -95,5 +95,5 @@ void physicsTest()
         subjects();
     }
     else
-        exit(0);*/
+        exit(0);
 }
