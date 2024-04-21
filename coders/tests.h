@@ -45,3 +45,4 @@ public:
 };
 
 void biologyTest();
+void physicsTest();

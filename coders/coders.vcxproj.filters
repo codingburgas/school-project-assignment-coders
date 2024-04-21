@@ -24,7 +24,7 @@
     <ClCompile Include="subjects.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PhysicsTest.cpp">
+    <ClCompile Include="physicsTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="biologyTest.cpp">
@@ -38,10 +38,7 @@
     <ClInclude Include="subjects.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PhysicsTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="biologyTest.h">
+    <ClInclude Include="tests.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

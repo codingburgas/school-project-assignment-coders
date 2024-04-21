@@ -1,6 +1,5 @@
 #include "subjects.h"
-#include "PhysicsTest.h"
-#include "biologyTest.h"
+#include "tests.h"
 
 void mathematics()
 {
@@ -17,21 +16,14 @@ void geography()
     std::cout << "Geography";
 }
 
-//void biology()
-//{
-//    biologyTest();
-//}
+
 
 void history()
 {
     std::cout << "History";
 }
 
-void physics()
-{
-    std::cout << "Physics Test Starting..." << std::endl;
-    startPhysicsTest();
-}
+
 
 void subjects()
 {
@@ -60,7 +52,7 @@ void subjects()
     else if (choice == '5')
         history();
     else if (choice == '6')
-        physics();
+        physicsTest();
     else if (choice == '0')
         exit(0);
     else subjects();

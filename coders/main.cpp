@@ -1,10 +1,8 @@
 #include "menu.h"
 #include "subjects.h"
-#include "biologyTest.h"
+#include "tests.h"
 
 int main()
 {
     mainMenu();
-    //biologyTest();
-
 }

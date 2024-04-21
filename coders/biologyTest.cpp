@@ -1,11 +1,11 @@
-﻿#include "biologyTest.h"
+﻿#include "tests.h"
 
 void biologyTest()
 {
     system("cls");
     cout << "This is the biology test" << endl; 
     QuestionBank biologyBank;
-    unsigned short int score = 0;
+    unsigned short int biologyScore = 0;
 
     biologyBank.addQuestion("What is the function of the nucleus in the cell?", "Genetic");
     biologyBank.addQuestion("What process the replication is?", "Anabolic");
@@ -16,7 +16,7 @@ void biologyTest()
     biologyBank.addQuestion("What is the process by which plants make their own food?", "Photosynthesis");
     biologyBank.addQuestion("What is the name of the fluid part of blood?", "Plasma");
     biologyBank.addQuestion("What is the scientific term for the study of plants?", "Botany");
-    biologyBank.addQuestion("Which gas do plants primarily take in during photosynthesis?", "Carbon Dioxide");
+    biologyBank.addQuestion("Which gas do plants primarily take in during photosynthesis?", "CO2");
     biologyBank.addQuestion("What is the chemical formula for glucose?", "C6H12O6");
     biologyBank.addQuestion("What is the largest organ in the human body?", "Skin");
     biologyBank.addQuestion("Which part of the plant conducts photosynthesis?", "Leaves");
@@ -24,9 +24,12 @@ void biologyTest()
     biologyBank.addQuestion("What is the name of the process by which water evaporates from the leaves of plants?", "Transpiration");
     biologyBank.addQuestion("What is the scientific name for the human thumb?", "Pollex");
     biologyBank.addQuestion("What is the study of the interactions between organisms and their environment called?", "Ecology");
+    biologyBank.addQuestion("What is the name of the protein that carries oxygen in red blood cells?", "Hemoglobin");
+    biologyBank.addQuestion("What is the term for the genetic makeup of an organism?", "Genotype");
+    biologyBank.addQuestion("What is the name of the outermost layer of skin cells?", "Epidermis");
 
 
-    for (int i = 0; i < 15; i++)
+    for (int i = 0; i < 10; i++)
     {
         if (i == 0)
         {
@@ -39,7 +42,7 @@ void biologyTest()
 
             if (answer == q.getAnswer()) {
                 cout << "Correct!" << endl;
-                score++;
+                biologyScore++;
             }
             else {
                 cout << "Incorrect. The correct answer is: " << q.getAnswer() << endl;
@@ -56,14 +59,14 @@ void biologyTest()
 
         if (answer == q.getAnswer()) {
             cout << "Correct!" << endl;
-            score++;
+            biologyScore++;
         }
         else {
             cout << "Incorrect. The correct answer is: " << q.getAnswer() << endl;
         }
         cout << endl;
     }
-    cout << "Your final score is: " << score << endl;
+    cout << "Your final score is: " << biologyScore << endl;
     
 
 
