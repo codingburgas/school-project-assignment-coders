@@ -43,7 +43,7 @@ public:
         return selectedQuestion;
     }
 };
-
+void geographyTest();
 void biologyTest();
 void physicsTest();
 void historyTest();
