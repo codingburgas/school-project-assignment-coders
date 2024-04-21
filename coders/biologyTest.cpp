@@ -28,7 +28,6 @@ void biologyTest()
     biologyBank.addQuestion("What is the term for the genetic makeup of an organism?", "Genotype");
     biologyBank.addQuestion("What is the name of the outermost layer of skin cells?", "Epidermis");
 
-
     for (int i = 0; i < 10; i++)
     {
         if (i == 0)

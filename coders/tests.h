@@ -46,3 +46,4 @@ public:
 
 void biologyTest();
 void physicsTest();
+void historyTest();

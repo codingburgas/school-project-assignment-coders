@@ -18,17 +18,14 @@ void geography()
 
 
 
-void history()
-{
-    std::cout << "History";
-}
+
 
 
 
 void subjects()
 {
     std::cout << std::endl;
-    std::cout << "Choose a subject";
+    std::cout << "Choose a subject" << endl;
     std::cout << std::endl;
     std::cout << "1. Mathematics" << std::endl;
     std::cout << "2. English" << std::endl;
@@ -50,7 +47,7 @@ void subjects()
     else if (choice == '4')
         biologyTest();
     else if (choice == '5')
-        history();
+        historyTest();
     else if (choice == '6')
         physicsTest();
     else if (choice == '0')
