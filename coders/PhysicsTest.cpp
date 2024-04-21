@@ -83,6 +83,13 @@ void physicsTest()
         grade = grades[4];
 
 
+    ofstream out("physicsResults.txt", ios_base::app);
+    if (out.is_open())
+    {
+        out << physicsScore << endl;
+        out.close();
+    }
+
     cout << "Your score is: " << physicsScore << " which is " << grade << " grade" << endl << endl;
     cout << "Would you like to do another test?" << endl;
     cout << "If yes, then press 'y' or 'Y'. If not, then press 'n' or 'N'." << endl;
