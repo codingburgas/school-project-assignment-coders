@@ -101,6 +101,14 @@ void chemistryTest()
 	else if (chemistryScore > 8)
 		grade = grades[4];
 
+
+	ofstream out("chemistyResults.txt", ios_base::app);
+	if (out.is_open())
+	{
+		out << chemistryScore << endl;
+		out.close();
+	}
+
 	// Displaying the score and grade
 	cout << "Your score is: " << chemistryScore << " which is " << grade << " grade" << endl << endl;
 
