@@ -101,6 +101,14 @@ void geographyTest()
     else if (geographyScore > 8)
         grade = grades[4];
 
+
+    ofstream out("geographyResults.txt", ios_base::app);
+    if (out.is_open())
+    {
+        out << geographyScore << endl;
+        out.close();
+    }
+
     // Displaying the score and grade
     cout << "Your score is: " << geographyScore << " which is " << grade << " grade" << endl << endl;
 
