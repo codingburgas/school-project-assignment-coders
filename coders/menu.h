@@ -9,6 +9,7 @@
 
 using namespace std;
 
+void printTitle();
 void mainMenu();
 void reg();
 void login();

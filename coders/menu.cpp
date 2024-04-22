@@ -1,6 +1,16 @@
 #include "menu.h" // Including necessary header files
 #include "subjects.h"
 
+void printTitle()
+{
+    cout << " ____  ____  ____  _____ ____  ____ " << endl;
+    cout << "/   _\\/  _ \\/  _ \\/  __//  __\\/ ___\\  " << endl;
+    cout << "|  /  | / \\|| | \\||  \\  |  \\/||    \\  " << endl;
+    cout << "|  \\__| \\_/|| |_/||  /_ |    /\\___ |  " << endl;
+    cout << "\\____/\\____/\\____/\\____\\\\_/\\_\\\\____/  " << endl;
+    cout << endl;
+}
+
 // Function to check the validity of username and password
 bool check(string username, string password, string userFile, string passFile)
 {
@@ -165,6 +175,8 @@ void reg()
 // Function for main menu
 void mainMenu()
 {
+    printTitle();
+
     char answer;
     string path;
     cout << "1. Login" << endl;
