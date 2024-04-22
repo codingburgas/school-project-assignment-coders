@@ -1,5 +1,5 @@
 <p align = "center">
-  <img src="documentation/logo.png" text-align="center">
+  <img src="documents/logo.png" text-align="center">
 </p>
 
 <hr>
@@ -26,7 +26,7 @@ Git
 <p>3. Run the project!</p>
 
 <h1>📄 Documentation</h1>
-<h3> ➤ <a href="documentation/Documentation.docx">Documentation</a><img src="https://cdn.worldvectorlogo.com/logos/word-1.svg" alt="Word" width="30" height="20"/> </h3>
+<h3> ➤ <a href="https://github.com/codingburgas/school-project-assignment-coders/blob/main/documents/Documentation.docx">Documentation</a><img src="https://cdn.worldvectorlogo.com/logos/word-1.svg" alt="Word" width="30" height="20"/> </h3>
 <h3> ➤ <a href="documentation/Presentation.pptx">Presentation </a><img src="https://cdn.worldvectorlogo.com/logos/powerpoint-2.svg" alt="PowerPoint" width="30" height="20"/> </h3>
 <h3> ➤ <a href="#">QA documentation </a><img src="https://cdn.worldvectorlogo.com/logos/excel-4.svg" alt="Word" width="30" height="20"/></h3>
 <h3> ➤ <a href ="documentation/TestPlan.docx">Test plan </a><img src="https://cdn.worldvectorlogo.com/logos/word-1.svg" alt="Word" width="30" height="20"/></h3>
