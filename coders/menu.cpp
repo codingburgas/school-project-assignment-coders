@@ -47,7 +47,7 @@ bool check(string username, string password, string userFile, string passFile)
 // Function to handle user login
 void login()
 {
-    string username, password, path;
+    string username, password;
     char character;
 
     // Prompt for username
@@ -63,11 +63,10 @@ void login()
     }
 
     // Check if username and password are valid
-    if (check(username, password, "names.txt", "passwords.txt"))
+    if (check(username, password, "userDataFiles/names.txt", "userDataFiles/passwords.txt"))
     {
         // If valid, clear screen and proceed
         system("cls");
-        path = "acc.txt";
         cout << "Welcome" << endl;
         subjects();
     }
@@ -105,7 +104,7 @@ void enterPass(string newPass, string confirmPass)
         if (newPass == confirmPass)
         {
             // If confirmation matches, store password in file
-            ofstream out1("passwords.txt", std::ios_base::app);
+            ofstream out1("userDataFiles/passwords.txt", std::ios_base::app);
             if (out1.is_open())
             {
                 out1 << newPass << endl;
@@ -129,20 +128,29 @@ void enterPass(string newPass, string confirmPass)
 // Function for user registration
 void reg()
 {
-    string confirmPass, newPass, newName, path;
+    string confirmPass, newPass, newName;
 
     // Prompt for username and store in file
     cout << endl << "Enter username: ";
-    ofstream out("names.txt", ios_base::app);
+    ofstream out("userDataFiles/names.txt", ios_base::app);
     if (out.is_open())
     {
         string username;
         cin >> username;
-        out << username << endl;
-        out.close();
-        newName = username;
-        // Proceed to enter password
-        enterPass(newPass, confirmPass);
+        if (username.length() >= 4)
+        {
+            out << username << endl;
+            out.close();
+            newName = username;
+            // Proceed to enter password
+            enterPass(newPass, confirmPass);
+        }
+        else
+        {
+            system("cls");
+            cout << "Username must be at least 4 characters long!" << endl;
+            reg();
+        }
     }
 
     // Prompt to continue with login or exit
@@ -156,8 +164,6 @@ void reg()
     {
         // If yes, proceed to login
         system("cls");
-        path = "../../textFiles/login.txt";
-        //displayFunc(path);
         login();
     }
     else if (numLog == 'N' || numLog == 'n')
@@ -178,7 +184,6 @@ void mainMenu()
     printTitle();
 
     char answer;
-    string path;
     cout << "1. Login" << endl;
     cout << "2. Register" << endl;
     cout << "0. Exit" << endl;
@@ -190,14 +195,12 @@ void mainMenu()
     {
         // If login chosen, proceed to login
         system("cls");
-        path = "register.txt";
         login();
     }
     else if (answer == '2')
     {
         // If register chosen, proceed to registration
         system("cls");
-        path = "login.txt";
         reg();
     }
     else if (answer == '0')

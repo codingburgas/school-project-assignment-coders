@@ -102,7 +102,7 @@ void chemistryTest()
 		grade = grades[4];
 
 
-	ofstream out("chemistyResults.txt", ios_base::app);
+	ofstream out("dataFiles/chemistyResults.txt", ios_base::app);
 	if (out.is_open())
 	{
 		out << chemistryScore << endl;
@@ -110,11 +110,11 @@ void chemistryTest()
 	}
 
 	// Displaying the score and grade
-	cout << "Your score is: " << chemistryScore << " which is " << grade << " grade" << endl << endl;
+	cout << "Your score is: " << chemistryScore << " which is a/an " << grade << " grade" << endl << endl;
 
 	// Asking if the user wants to do another test
 	cout << "Would you like to do another test?" << endl;
-	cout << "If yes, then press 'y' or 'Y'. If not, then press 'n' or 'N'." << endl;
+	cout << "If yes, then press 'y' or 'Y'. If not, then press 'n' or 'N' and you will close the app." << endl;
 	cout << "Enter your answer: ";
 	char answer;
 	cin >> answer;
