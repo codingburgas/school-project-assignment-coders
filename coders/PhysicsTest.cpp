@@ -1,14 +1,17 @@
-﻿#include "tests.h"
+﻿#include "tests.h" // Including necessary header files
 #include "subjects.h"
 
-void physicsTest() 
+// Function to conduct a physics test
+void physicsTest()
 {
     system("cls");
     cout << "This is the physics test" << endl;
+
+    // Creating a QuestionBank object for physics questions
     QuestionBank physicsBank;
     unsigned short int physicsScore = 0;
 
-
+    // Adding physics questions to the question bank
     physicsBank.addQuestion("What is the SI unit of force?", "Newton");
     physicsBank.addQuestion("What is the formula for velocity?", "Velocity = Distance / Time");
     physicsBank.addQuestion("What is the acceleration due to gravity on Earth?", "9.8 m/s^2");
@@ -29,19 +32,23 @@ void physicsTest()
     physicsBank.addQuestion("What is the formula for electric power?", "Electric Power = Voltage * Current");
     physicsBank.addQuestion("What is the principle behind the functioning of a transformer?", "Electromagnetic induction");
     physicsBank.addQuestion("What is the formula for torque?", "Torque = Force * Distance * sin(angle)");
-    
 
+    // Loop for asking questions
     for (int i = 0; i < 10; i++)
     {
+        // Asking the first question without clearing the screen
         if (i == 0)
         {
+            // Getting a random question from the question bank
             Question q = physicsBank.getRandomQuestion();
             cout << "Question " << i + 1 << ": " << q.getQuestion() << endl;
 
+            // Getting user's answer
             string answer;
             cout << "Enter your answer: ";
             getline(cin, answer);
 
+            // Checking if the answer is correct
             if (answer == q.getAnswer()) {
                 cout << "Correct!" << endl;
                 physicsScore++;
@@ -50,15 +57,21 @@ void physicsTest()
                 cout << "Incorrect. The correct answer is: " << q.getAnswer() << endl;
             }
             cout << endl;
+
+            // Clearing the screen
             system("cls");
         }
+
+        // Asking subsequent questions
         Question q = physicsBank.getRandomQuestion();
         cout << "Question " << i + 1 << ": " << q.getQuestion() << endl;
 
+        // Getting user's answer
         string answer;
         cout << "Enter your answer: ";
         getline(cin, answer);
 
+        // Checking if the answer is correct
         if (answer == q.getAnswer()) {
             cout << "Correct!" << endl;
             physicsScore++;
@@ -69,7 +82,8 @@ void physicsTest()
         cout << endl;
     }
 
-    string grades[5] = { "poor", "average", "good", "very good", "exellent" };
+    // Assigning grade based on the score
+    string grades[5] = { "poor", "average", "good", "very good", "excellent" };
     string grade;
     if (physicsScore < 6)
         grade = grades[0];
@@ -82,7 +96,7 @@ void physicsTest()
     else if (physicsScore > 8)
         grade = grades[4];
 
-
+    // Storing the score in a file
     ofstream out("physicsResults.txt", ios_base::app);
     if (out.is_open())
     {
@@ -90,7 +104,10 @@ void physicsTest()
         out.close();
     }
 
+    // Displaying the score and grade
     cout << "Your score is: " << physicsScore << " which is " << grade << " grade" << endl << endl;
+
+    // Asking if the user wants to do another test
     cout << "Would you like to do another test?" << endl;
     cout << "If yes, then press 'y' or 'Y'. If not, then press 'n' or 'N'." << endl;
     cout << "Enter your answer: ";
@@ -98,9 +115,11 @@ void physicsTest()
     cin >> answer;
     if (answer == 'y' || answer == 'Y')
     {
+        // Clearing the screen and going back to the subject selection menu
         system("cls");
         subjects();
     }
     else
+        // Exiting the program if the user does not want to do another test
         exit(0);
 }

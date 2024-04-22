@@ -1,20 +1,26 @@
-#include "menu.h"
+#include "menu.h" // Including necessary header files
 #include "subjects.h"
 
+// Function to check the validity of username and password
 bool check(string username, string password, string userFile, string passFile)
 {
+    // Open files for reading
     ifstream file(userFile);
     ifstream file1(passFile);
 
     string storedUsername;
     string storedPassword;
 
+    // Read usernames and passwords from files
     while (file >> storedUsername && file1 >> storedPassword)
     {
+        // Check if the username matches
         if (storedUsername == username)
         {
+            // If username matches, check if password matches
             if (storedPassword == password)
             {
+                // Close files and return true if password matches
                 file.close();
                 file1.close();
                 return storedPassword == password;
@@ -22,19 +28,23 @@ bool check(string username, string password, string userFile, string passFile)
         }
     }
 
+    // Close files and return false if no match found
     file.close();
     file1.close();
     return false;
 }
 
+// Function to handle user login
 void login()
 {
     string username, password, path;
     char character;
 
+    // Prompt for username
     cout << endl << "Enter your username: ";
     cin >> username;
 
+    // Prompt for password (hidden)
     cout << endl << "Enter your password: ";
     while ((character = _getch()) != '\r')
     {
@@ -42,26 +52,29 @@ void login()
         password += character;
     }
 
+    // Check if username and password are valid
     if (check(username, password, "names.txt", "passwords.txt"))
     {
+        // If valid, clear screen and proceed
         system("cls");
-
         path = "acc.txt";
-
         cout << "Welcome" << endl;
         subjects();
     }
     else
     {
+        // If invalid, prompt again
         cout << endl << "Invalid username or password. Please try again" << endl;
         login();
     }
 }
 
+// Function to check password length
 bool checkPass(string password)
 {
     if (password.length() < 8)
     {
+        // Password length should be at least 8 characters
         cout << "Password should be at least 8 characters long." << endl;
         return false;
     }
@@ -69,16 +82,19 @@ bool checkPass(string password)
         return true;
 }
 
+// Function to enter and confirm password during registration
 void enterPass(string newPass, string confirmPass)
 {
     cout << endl << "Enter password: ";
     cin >> newPass;
     if (checkPass(newPass))
     {
+        // If password meets requirements, prompt for confirmation
         cout << endl << "Confirm your password: ";
         cin >> confirmPass;
         if (newPass == confirmPass)
         {
+            // If confirmation matches, store password in file
             ofstream out1("passwords.txt", std::ios_base::app);
             if (out1.is_open())
             {
@@ -88,24 +104,25 @@ void enterPass(string newPass, string confirmPass)
         }
         else
         {
+            // If confirmation doesn't match, prompt again
             cout << endl << "Password confirmation is not correct!" << endl;
             enterPass(newPass, confirmPass);
         }
     }
     else
     {
+        // If password doesn't meet requirements, prompt again
         enterPass(newPass, confirmPass);
     }
 }
 
+// Function for user registration
 void reg()
 {
-    
     string confirmPass, newPass, newName, path;
-    
 
+    // Prompt for username and store in file
     cout << endl << "Enter username: ";
-
     ofstream out("names.txt", ios_base::app);
     if (out.is_open())
     {
@@ -114,32 +131,38 @@ void reg()
         out << username << endl;
         out.close();
         newName = username;
+        // Proceed to enter password
         enterPass(newPass, confirmPass);
     }
-    
+
+    // Prompt to continue with login or exit
     system("cls");
     char numLog;
-    
+
     cout << "You have to login to continue." << endl << "Would you like to continue? (Y/N or y/n)   Type only the letter" << endl;
     cout << "Enter your answer:";
     cin >> numLog;
     if (numLog == 'Y' || numLog == 'y')
     {
+        // If yes, proceed to login
         system("cls");
         path = "../../textFiles/login.txt";
         //displayFunc(path);
         login();
     }
-    else if (numLog == 'N' == numLog == 'n')
+    else if (numLog == 'N' || numLog == 'n')
     {
+        // If no, exit program
         exit(0);
     }
     else
     {
+        // If invalid input, prompt again
         cout << "Wrong input. Try again:";
-    }           
+    }
 }
 
+// Function for main menu
 void mainMenu()
 {
     char answer;
@@ -150,28 +173,31 @@ void mainMenu()
     cout << "Enter answer: ";
     cin >> answer;
 
+    // Check user input and proceed accordingly
     if (answer == '1')
     {
+        // If login chosen, proceed to login
         system("cls");
         path = "register.txt";
         login();
     }
     else if (answer == '2')
     {
+        // If register chosen, proceed to registration
         system("cls");
         path = "login.txt";
         reg();
     }
     else if (answer == '0')
     {
+        // If exit chosen, exit program
         exit(0);
     }
     else
     {
+        // If invalid input, prompt again
         system("cls");
         cout << "Invalid input" << endl;
         mainMenu();
-
     }
-
 }
