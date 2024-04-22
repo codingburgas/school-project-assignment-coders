@@ -1,3 +1,7 @@
+<p align = "center">
+  <img src="documentation/Selected photo.png" text-align="center">
+</p>
+
 <hr>
 
 # 📖 About the application 
@@ -25,7 +29,7 @@ Git
 <h3> ➤ <a href="#">Documentation</a><img src="https://cdn.worldvectorlogo.com/logos/word-1.svg" alt="Word" width="30" height="20"/> </h3>
 <h3> ➤ <a href="#">Presentation </a><img src="https://cdn.worldvectorlogo.com/logos/powerpoint-2.svg" alt="PowerPoint" width="30" height="20"/> </h3>
 <h3> ➤ <a href="#">QA documentation </a><img src="https://cdn.worldvectorlogo.com/logos/excel-4.svg" alt="Word" width="30" height="20"/></h3>
-<h3> ➤ <a href ="#">Test plan </a><img src="https://cdn.worldvectorlogo.com/logos/word-1.svg" alt="Word" width="30" height="20"/></h3>
+<h3> ➤ <a href ="documentation/TestPlan.docx">Test plan </a><img src="https://cdn.worldvectorlogo.com/logos/word-1.svg" alt="Word" width="30" height="20"/></h3>
 <h1>💻 Used Technologies</h1>
   
  <p><img src="https://seeklogo.com/images/C/c-logo-43CE78FF9C-seeklogo.com.png" alt="C++" width="20" height="20"> C/C++ - Main Languages</p>
