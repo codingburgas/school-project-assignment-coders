@@ -105,7 +105,7 @@ void chemistryTest()
 	ofstream out("dataFiles/chemistyResults.txt", ios_base::app);
 	if (out.is_open())
 	{
-		out << chemistryScore << endl;
+		out << chemistryScore << "/10" << endl;
 		out.close();
 	}
 

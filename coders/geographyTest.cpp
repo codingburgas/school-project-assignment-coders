@@ -105,7 +105,7 @@ void geographyTest()
     ofstream out("dataFiles/geographyResults.txt", ios_base::app);
     if (out.is_open())
     {
-        out << geographyScore << endl;
+        out << geographyScore << "/10" << endl;
         out.close();
     }
 

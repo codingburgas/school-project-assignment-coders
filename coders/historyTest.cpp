@@ -104,7 +104,7 @@ void historyTest()
     ofstream out("dataFiles/historyResults.txt", ios_base::app);
     if (out.is_open())
     {
-        out << historyScore << endl;
+        out << historyScore << "/10" << endl;
         out.close();
     }
 

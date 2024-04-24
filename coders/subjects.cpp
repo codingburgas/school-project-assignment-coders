@@ -1,18 +1,6 @@
 #include "subjects.h"
 #include "tests.h"
 
-void chemistry()
-{
-    std::cout << "chemistry";
-}
-
-
-
-
-
-
-
-
 void subjects()
 {
     std::cout << std::endl;

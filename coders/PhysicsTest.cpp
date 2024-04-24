@@ -100,7 +100,7 @@ void physicsTest()
     ofstream out("dataFiles/physicsResults.txt", ios_base::app);
     if (out.is_open())
     {
-        out << physicsScore << endl;
+        out << physicsScore << "/10" << endl;
         out.close();
     }
 

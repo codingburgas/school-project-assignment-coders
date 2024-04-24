@@ -105,12 +105,12 @@ void biologyTest()
     ofstream out("dataFiles/biologyResults.txt", ios_base::app);
     if (out.is_open())
     {
-        out << biologyScore << endl;
+        out << biologyScore << "/10" << endl;
         out.close();
     }
 
     // Displaying the score and grade
-    cout << "Your score is: " << biologyScore << " which is a/an " << grade << " grade ()" << endl << endl;
+    cout << "Your score is: " << biologyScore << " which is a/an " << grade << " grade." << endl << endl;
 
     // Asking if the user wants to do another test
     cout << "Would you like to do another test?" << endl;
